@@ -16,7 +16,7 @@
 ## Association
 - has_many :items
 - has_many :comments
-- has_many :buy
+- has_many :buys
 
 ## items テーブル
 
@@ -65,15 +65,15 @@
 
 ## addresses テーブル
 
-| Column    | Type     | Options         |
-|-----------|----------|-----------------|
-| build     | string   |                 |
-| buy       |references|foreign_key: true|
-| phone     | string   | null: false     |
-|postal_code| string   | null: false     |
-| prefecture| integer  | null: false     |
-| city      | string   | null: false     |
-| block     | string   | null: false     |
+| Column      | Type     | Options         |
+|-------------|----------|-----------------|
+| build       | string   |                 |
+| buy         |references|foreign_key: true|
+| phone       | string   | null: false     |
+|postal_code  | string   | null: false     |
+|prefecture_id| integer  | null: false     |
+| city        | string   | null: false     |
+| block       | string   | null: false     |
 
 
 ## Association
