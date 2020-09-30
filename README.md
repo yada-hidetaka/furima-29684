@@ -20,24 +20,23 @@
 
 ## items テーブル
 
-| Column    | Type     | Options          |
-|-----------|----------|------------------|
-| name      | string   | null: false      |
-| user      |references| foreign_key: true|
-| text      | text     | null: false      |
-| price     | integer  | null: false      |
-| category  | integer  | null: false      |
-| status    | integer  | null: false      |
-| cost      | integer  | null: false      |
-| day       | integer  | null: false      |
-| ship_form | integer  | null: false      |
+| Column      | Type     | Options          |
+|-------------|----------|------------------|
+| name        | string   | null: false      |
+| user        |references| foreign_key: true|
+| text        | text     | null: false      |
+| price       | integer  | null: false      |
+|category_id  | integer  | null: false      |
+| status_id   | integer  | null: false      |
+| cost_id     | integer  | null: false      |
+| day_id      | integer  | null: false      |
+| ship_form_id| integer  | null: false      |
 
 
 ## Association
 - belongs_to :user
 - has_many : comment
-- has_one : address 
-- has_many :buy
+- has_one :buy
 
 ## comment テーブル
 
@@ -62,18 +61,19 @@
 
 - has_one :address
 - belongs_to :item
+- belongs_to :user
 
 ## addresses テーブル
 
-| Column    | Type     | Options       |
-|-----------|----------|---------------|
-| build     | string   | null: true    |
-| buy_id    | integer  | null: false   |
-| phone     | integer  | null: false   |
-|postal_code| integer  | null: false   |
-| prefecture| integer  | null: false   |
-| city      | string   | null: false   |
-| block     | string   | null: false   |
+| Column    | Type     | Options         |
+|-----------|----------|-----------------|
+| build     | string   |                 |
+| buy       |references|foreign_key: true|
+| phone     | string   | null: false     |
+|postal_code| string   | null: false     |
+| prefecture| integer  | null: false     |
+| city      | string   | null: false     |
+| block     | string   | null: false     |
 
 
 ## Association
