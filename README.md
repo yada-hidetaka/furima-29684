@@ -2,16 +2,16 @@
 
 ## usersテーブル
 
-| Column    | Type     | Options       |
-|-----------|----------|---------------|
-| nickname  | string   | null: false   |
-| email     | string   | null: false   |
-| password  | string   | null: false   |
-| first-name| string   | null: false   |
-| last-name | string   | null: false   |
-| birthday  | date     | null: false   |
-| FIRST_NAME| string   | null: false   |
-| LAST_NAME | string   | null: false   |
+| Column         | Type     | Options       |
+|----------------|----------|---------------|
+| nickname       | string   | null: false   |
+| email          | string   | null: false   |
+| password       | string   | null: false   |
+| first_name     | string   | null: false   |
+| last_name      | string   | null: false   |
+| birthday       | date     | null: false   |
+| first_name_kana| string   | null: false   |
+| last_name_kana | string   | null: false   |
 
 ## Association
 - has_many :items
@@ -23,20 +23,21 @@
 | Column    | Type     | Options          |
 |-----------|----------|------------------|
 | name      | string   | null: false      |
-| user_id   | reference| foreign_key: true|
+| user      |references| foreign_key: true|
 | text      | text     | null: false      |
 | price     | integer  | null: false      |
 | category  | integer  | null: false      |
 | status    | integer  | null: false      |
 | cost      | integer  | null: false      |
 | day       | integer  | null: false      |
+| ship_form | integer  | null: false      |
 
 
 ## Association
 - belongs_to :user
 - has_many : comment
 - has_one : address 
-- has_one :buy
+- has_many :buy
 
 ## comment テーブル
 
@@ -52,10 +53,10 @@
 
 ## buys テーブル
 
-| Column    | Type     | Options       |
-|-----------|----------|---------------|
-| item_id   | integer  | null: false   |
-| user_id   | integer  | null: false   |
+| Column    | Type     | Options          |
+|-----------|----------|------------------|
+| item      |references| foreign_key: true|
+| user      |references| foreign_key: true|
 
 ## Association
 
