@@ -68,7 +68,7 @@ describe User do
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
       it "ユーザー本名は、全角（漢字・ひらがな）で入力させる" do
-        @user.first_name = "タナカ"
+        @user.first_name = "tanaka"
         @user.valid?
         expect(@user.errors.full_messages).to include("First name is invalid")
       end
@@ -78,7 +78,7 @@ describe User do
         expect(@user.errors.full_messages).to include("Last name can't be blank")
       end
       it "ユーザー本名は、全角（漢字・ひらがな）で入力させる" do
-        @user.last_name = "タロウ"
+        @user.last_name = "taro"
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name is invalid")
       end
@@ -88,7 +88,7 @@ describe User do
         expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
       it "ユーザー本名のフリガナは、全角（カタカナ）で入力させる" do
-        @user.first_name_kana = "田中"
+        @user.first_name_kana = "田"
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana is invalid")
       end
