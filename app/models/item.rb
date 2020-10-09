@@ -15,7 +15,7 @@ class Item < ApplicationRecord
     validates :name
     validates :text
     validates :status_id
-    validates :prefecture
+    validates :prefecture_id
     validates :category_id
     validates :day_id
     validates :ship_form_id

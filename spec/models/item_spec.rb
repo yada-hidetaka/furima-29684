@@ -18,8 +18,7 @@ describe Item do
       it 'nameが空では登録できない' do
         @item.name = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Name can't be blank
-          ")
+        expect(@item.errors.full_messages).to include("Name can't be blank")
       end
       it 'imageが空では登録できない' do
         @item.image = nil
@@ -32,27 +31,27 @@ describe Item do
         expect(@item.errors.full_messages).to include("Text can't be blank")
       end
       it 'categoryが空では登録できない' do
-        @item.category = 1
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
       it 'ship_formが空では登録できない' do
-        @item.ship_form = 1
+        @item.ship_form_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Ship form must be other than 1")
       end
       it 'prefectureが空では登録できない' do
-        @item.prefecture = 1
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
       end
       it 'statusが空では登録できない' do
-        @item.status = 1
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Status must be other than 1")
       end
       it 'dayが空では登録できない' do
-        @item.day = 1
+        @item.day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Day must be other than 1")
       end
@@ -69,6 +68,8 @@ describe Item do
       it 'priceは300~9999999の範囲でなければならない' do
         @item.price = '1'
         @item.valid?
-        eexpect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
     end
+  end
+end
