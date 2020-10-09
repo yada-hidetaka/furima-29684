@@ -19,6 +19,7 @@ class Item < ApplicationRecord
     validates :category_id
     validates :day_id
     validates :ship_form_id
+    validates :image
   end
 
   validates :category_id, :day_id, :ship_form_id, :prefecture_id, :status_id, numericality: { other_than: 1 }
