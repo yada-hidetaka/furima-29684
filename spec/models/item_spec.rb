@@ -70,6 +70,11 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
+      it 'priceは300~9999999の範囲でなければならない' do
+        @item.price = '10000000'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+      end
     end
   end
 end
