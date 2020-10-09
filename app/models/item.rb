@@ -17,7 +17,6 @@ class Item < ApplicationRecord
     validates :status_id
     validates :prefecture
     validates :category_id
-    validates :image
     validates :day_id
     validates :ship_form_id
   end
@@ -27,4 +26,6 @@ class Item < ApplicationRecord
   with_options presence: true, format: { with:/\A[0-9]+\z/ } do
     validates :price
   end
+
+  validates_numericality_of :price, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999
 end
